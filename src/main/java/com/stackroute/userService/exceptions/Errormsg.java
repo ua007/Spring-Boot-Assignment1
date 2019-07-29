@@ -1,4 +1,4 @@
-package com.stackroute.userService.GlobalException;
+package com.stackroute.userService.exceptions;
  import lombok.Data;
 //This class format the Exception in the form of Error Message and RequestedURI
 @Data
