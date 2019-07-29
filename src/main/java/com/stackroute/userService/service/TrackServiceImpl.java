@@ -22,7 +22,7 @@ public class TrackServiceImpl implements TrackService {
     }
 
     @Override
-    public Track saveUser(Track track) throws TrackAlreadyExistException{
+    public Track saveTrack(Track track) throws TrackAlreadyExistException{
 
         if(trackRepository.existsById(track.getId()))
         {
@@ -33,7 +33,7 @@ public class TrackServiceImpl implements TrackService {
     }
 
     @Override
-    public List<Track> deleteUser(int id) throws TrackNotFoundException{
+    public List<Track> deleteTrack(int id) throws TrackNotFoundException{
         if(trackRepository.existsById(id))
         {
             throw new TrackNotFoundException("Track not found");
@@ -43,7 +43,7 @@ public class TrackServiceImpl implements TrackService {
     }
 
     @Override
-    public Track updateUser(int id, String name, String comment) {
+    public Track updateTrack(int id, String name, String comment) {
         Optional<Track> user= trackRepository.findById(id);
         Track track =user.get();
         track.setName(name);
@@ -54,7 +54,7 @@ public class TrackServiceImpl implements TrackService {
     }
 
     @Override
-    public List<Track> getAllUsers() {
+    public List<Track> getAllTracks() {
 
         return trackRepository.findAll();
     }
