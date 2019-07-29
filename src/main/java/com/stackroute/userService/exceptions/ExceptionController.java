@@ -1,4 +1,4 @@
-package com.stackroute.userService.GlobalException;
+package com.stackroute.userService.exceptions;
 
 import com.stackroute.userService.exceptions.TrackNotFoundException;
 import com.stackroute.userService.exceptions.TrackAlreadyExistException;
