@@ -23,7 +23,7 @@ public class TrackController {
     }
 
     @PostMapping("track")
-    public ResponseEntity<?> saveUser(@RequestBody Track track) throws TrackAlreadyExistException
+    public ResponseEntity<?> saveTrack(@RequestBody Track track) throws TrackAlreadyExistException
     {
         ResponseEntity responseEntity;
         
@@ -44,7 +44,7 @@ public class TrackController {
     }
 
     @DeleteMapping("track/{userId}")
-    public ResponseEntity<?> deleteUser(@PathVariable int userId) throws TrackNotFoundException
+    public ResponseEntity<?> deleteTrack(@PathVariable int userId) throws TrackNotFoundException
     {
         ResponseEntity responseEntity;
         
@@ -55,7 +55,7 @@ public class TrackController {
     }
 
     @PutMapping("track/{userId}/{name}/{comment}")
-    public ResponseEntity<?> updateUser(@PathVariable int id,@PathVariable String name,@PathVariable String comment) throws Exception
+    public ResponseEntity<?> updateTrack(@PathVariable int id,@PathVariable String name,@PathVariable String comment) throws Exception
     {
         ResponseEntity responseEntity;
        
@@ -66,7 +66,7 @@ public class TrackController {
     }
 
     @GetMapping("track")
-    public ResponseEntity<?> getAllUser() throws Exception
+    public ResponseEntity<?> getAllTrack() throws Exception
     {
        
             return new ResponseEntity<List<Track>>(trackService.getAllUsers(), HttpStatus.OK);
